@@ -73,8 +73,8 @@ class Email {
 	/**
 	 * Send an email message.
 	 *
-	 * @param   string|array  recipient email (and name), or an array of To, Cc, Bcc names
-	 * @param   string|array  sender email (and name)
+	 * @param   string|array  recipient Email (and name), or an array of To, Cc, Bcc names
+	 * @param   string|array  sender Email (and name)
 	 * @param   string        message subject
 	 * @param   string        message body
 	 * @param   boolean       send email as HTML
@@ -83,7 +83,7 @@ class Email {
 	public static function send($to, $from, $subject, $message, $html = FALSE)
 	{
 		// Connect to SwiftMailer
-		(Email::$mail === NULL) and email::connect();
+		(Email::$mail === NULL) and Email::connect();
 
 		// Determine the message type
 		$html = ($html === TRUE) ? 'text/html' : 'text/plain';
